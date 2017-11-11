@@ -1,0 +1,34 @@
+.notselected {
+    opacity: 0.5;
+}
+
+.selected {
+    opacity: 1;
+}
+
+.form-btn__arrow_right {
+    margin-left: auto;
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    .txt {
+        font-family: AvantDemi;
+        font-size: 1.5em;
+    }
+    .form-btn {
+        margin-right: auto;
+    }
+    &>div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 48em) {
+    .footer>div {
+        width: 100%;
+    }
+}

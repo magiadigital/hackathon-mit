@@ -1,0 +1,17 @@
+<p class="main-title">Please select your candidate</p>
+<p class="txt">{{info}}</p>
+
+<div class="party" *ngIf="id !== 'null'">
+    <h4 class="title">{{selectedCandidate.title}}</h4>
+    <div class="field">
+        <img class="img-responsive img-rounded" src="assets/images/candidatos/{{selectedCandidate.candidate}}" alt="{{selectedCandidate.candidate_alt}}">
+    </div>
+    <div class="field">
+        <img class="img-responsive img-rounded" src="assets/images/logos/{{selectedCandidate.party}}" alt="{{selectedCandidate.party_alt}}">
+    </div>
+</div>
+<button class="form-btn form-btn__green" type="button" (click)="vote()">Vote</button>
+<section class="footer">
+    <button class="form-btn__arrow" type="button" [routerLink]="['/candidatesList']"><img src="assets/images/left-arr.png"/></button>
+    <p class="txt">Back</p>
+</section>

@@ -1,0 +1,27 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    align-items: center;
+}
+
+.party {
+    max-width: 25em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    margin-right: auto;
+    .txt {
+        font-family: AvantDemi;
+        font-size: 1.5em;
+    }
+}
+
+.form-btn {
+    margin: auto auto 1em;
+}
