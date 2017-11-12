@@ -14,6 +14,7 @@ import { VoteComponent } from './vote/vote.component';
 import { FinishComponent } from './finish/finish.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
+import {SharingService} from './sharing.service';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AuthService } from './auth.service';
   ],
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    SharingService
   ],
   bootstrap: [AppComponent]
 })
