@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { OwlCarousel } from 'ngx-owl-carousel';
+import {SharingService} from '../sharing.service';
 
 @Component({
   selector: 'app-list',
@@ -96,7 +97,8 @@ export class ListComponent implements OnInit {
   ];
   parties2d = [];
   constructor(
-    private router: Router
+    private router: Router,
+    private sharing: SharingService
   ) { }
 
   ngOnInit() {
@@ -119,10 +121,11 @@ export class ListComponent implements OnInit {
         this.selectedParty = i;
         console.log(i);
       } else {
-        this.router.navigate(['/votes/', i]);
+        this.sharing.setSelectedCandidate(this.parties[i]);
+        this.router.navigate(['/votes/']);
       }
     } else {
-      this.router.navigate(['/votes/', 'null']);
+      this.router.navigate(['/votes/']);
     }
   }
 

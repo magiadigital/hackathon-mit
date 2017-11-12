@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'candidatesList', component: ListComponent, canActivate: [AuthGuard] },
-  { path: 'votes/:id', component: VoteComponent, canActivate: [AuthGuard] },
+  { path: 'votes', component: VoteComponent, canActivate: [AuthGuard] },
   { path: 'finish', component: FinishComponent, canActivate: [AuthGuard] },
   { path: 'result', component: ResultComponent },
   { path: '**', redirectTo: '' }

@@ -36,7 +36,7 @@ export class AuthService {
     this._citizenExist = exist;
   }
 
-  setHasvoted (hasVoted:boolean) {
+  setHasvoted (hasVoted: boolean) {
     this._hasVoted = hasVoted;
   }
 

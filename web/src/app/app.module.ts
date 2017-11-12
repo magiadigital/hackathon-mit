@@ -15,7 +15,7 @@ import { FinishComponent } from './finish/finish.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { ResultComponent } from './result/result.component';
-
+import {SharingService} from './sharing.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { ResultComponent } from './result/result.component';
   ],
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    SharingService
   ],
   bootstrap: [AppComponent]
 })
