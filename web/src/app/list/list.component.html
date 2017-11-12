@@ -6,10 +6,10 @@
         <div class="party" (click)="selectParty(column*partiesInColumn + row)" *ngFor="let item of party; let row = index" [ngClass]="chooseParty(column*partiesInColumn + row)">
             <h4 class="title">{{item.title}}</h4>
             <div class="field">
-                <img class="img-responsive img-rounded" src="assets/images/candidatos/{{item.candidate}}" alt="{{item.candidate_alt}}">
+                <img class="img-rounded" src="assets/images/candidatos/{{item.candidate}}" alt="{{item.candidate_alt}}">
             </div>
             <div class="field">
-                <img class="img-responsive img-rounded" src="assets/images/logos/{{item.party}}" alt="{{item.party_alt}}">
+                <img class="img-rounded" src="assets/images/logos/{{item.party}}" alt="{{item.party_alt}}">
             </div>
         </div>
     </div>

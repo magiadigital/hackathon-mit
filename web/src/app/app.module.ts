@@ -14,6 +14,7 @@ import { VoteComponent } from './vote/vote.component';
 import { FinishComponent } from './finish/finish.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
+import { ResultComponent } from './result/result.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AuthService } from './auth.service';
     LoginComponent,
     ListComponent,
     VoteComponent,
-    FinishComponent
+    FinishComponent,
+    ResultComponent
   ],
   imports: [
     HttpModule,
