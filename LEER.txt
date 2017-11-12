@@ -4,7 +4,7 @@ Ruta del REST API del hyperldger:
 
 http://190.81.160.212:3000/explorer/
 
-Y como carga inicial se debe crear los candidatos, ciudadanos, elecci�n, partido, tipo presidencia, regional, congresal)
+Y como carga inicial se debe crear los candidatos, ciudadanos, elección, partido, tipo presidencia, regional, congresal
 
 
 
