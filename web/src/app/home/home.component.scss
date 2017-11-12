@@ -17,6 +17,10 @@
             list-style: none;
         }
     }
+    &__img img {
+      max-width: 6em;
+      max-height: 6em;
+    }
 }
 
 .login-info>div {

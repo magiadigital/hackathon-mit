@@ -17,10 +17,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-      let tmp = this._authservice.isLoggedin();
-      console.log(tmp);
-
-      if (this._authservice.isLoggedin()) {
+      if (this._authservice.canLogIn()) {
         return true;
       } else {
         window.alert('You don\'t have permission to view this page');

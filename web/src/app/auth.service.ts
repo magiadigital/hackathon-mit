@@ -8,52 +8,46 @@ export class AuthService {
 
   private _actionUrl = 'http://190.81.160.212:3000/api/';
 
-  private _user: string;
-  private _password: string;
+  private _citizen = {
+    dni: '',
+    nombres: '',
+    apellidos: '',
+    imgUrl: '',
+  }
+  private _citizenExist = false;
+  private _hasVoted: boolean;
 
   constructor(
     private http: Http
   ) { }
 
-  setUser (user: string) {
-    this._user = user;
-  }
-  setPassword (pwd: string) {
-    this._password = pwd;
+  setLocalCitizen (citizen) {
+    this._citizen.dni = citizen.dni;
+    this._citizen.nombres = citizen.nombres;
+    this._citizen.apellidos = citizen.apellidos;
+    this._citizen.imgUrl = citizen.imgUrl;
   }
 
-  isLoggedin() {
-    this.getCitizen().subscribe(
-      data => {
-        data.forEach(element => {
-          if (this._user === element.dni &&  this._password === element.clave) {
-            console.log('si');
-            this.getLedgerCiudadano().subscribe(
-              lc => {
-                console.log('LC : ', lc);
-                lc.forEach(item => {
-                    if (item.ciudadano === element.dni) {
-                      return false;
-                    }
-                    return true;
-                  });
-                }
-            );
-            }
-          });
-        },
-        error => {
-          console.log('Error: ', error);
-        },
-        () => {console.log('nose');}
-    );
-
+  getLocalCitizen() {
+    return this._citizen;
   }
-  public getCitizen() {
+
+  setCitizenExits (exist: boolean) {
+    this._citizenExist = exist;
+  }
+
+  setHasvoted (hasVoted:boolean) {
+    this._hasVoted = hasVoted;
+  }
+
+  canLogIn(): boolean {
+    return (this._citizenExist && !this._hasVoted);
+  }
+  getCitizen() {
     const url = this._actionUrl + 'Ciudadano';
     return this.http.get(url).map((res: Response) => res.json());
   }
-  public getLedgerCiudadano() {
+  getLedgerCiudadano() {
     const url = this._actionUrl + 'LedgerCiudadano';
     return this.http.get(url).map((res: Response) => res.json());
   }

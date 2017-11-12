@@ -26,12 +26,11 @@ export class LoginComponent implements OnInit {
   }
 
   public loginuser(event) {
-
-    this.authservice.setUser(event.target.elements[0].value);
-    this.authservice.setPassword(event.target.elements[1].value);
-
-    /*this.citizenList.forEach(element => {
+    let hasVoted = false;
+    this.citizenList.forEach(element => {
       if (event.target.elements[0].value === element.dni ||  event.target.elements[0].value === element.clave) {
+        this.authservice.setLocalCitizen({ dni: element.dni, nombres: element.nombres, apellidos: element.apellidos, imgUrl: element.imgUrl });
+        this.authservice.setCitizenExits(true);
         this.authservice.getLedgerCiudadano().toPromise()
         .then((data) => {
           data.array.forEach(item => {
@@ -39,16 +38,15 @@ export class LoginComponent implements OnInit {
                 hasVoted = true;
               }
             });
-          })
-          .then(() => {
-            this.authservice.setHasvoted(hasVoted);
+            if (!hasVoted) {
+              this.authservice.setHasvoted(hasVoted);
+              this.router.navigate(['/home']);
+            }
           })
           .catch(error => console.log('Error: ', error));
+          this.authservice.setHasvoted(hasVoted);
+          this.router.navigate(['/home']);
         }
-        this.router.navigate(['/home']);
     });
-*/
-
-    this.router.navigate(['/home']);
   }
 }

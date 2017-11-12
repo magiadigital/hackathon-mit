@@ -3,21 +3,20 @@
     <div>
         <div class="media">
             <div class="media__img">
-                <img src="assets/images/avatar.jpg" alt="Nombre">
+                <img src="assets/images/{{citizen.imgUrl}}" alt="Nombre">
             </div>
             <div class="media__info">
                 <ul>
-                    <li><span class="title">Nombres:</span><span>Juan Carlos </span></li>
-                    <li><span class="title">apellidos:</span><span>Perez García</span></li>
-                    <li><span class="title">NºDNI:</span><span>07264578</span></li>
-                    <li><span class="title">Fecha de nacimiento:</span><span>23 10 1980</span></li>
+                    <li><span class="title">Names: </span><span>{{citizen.nombres}}</span></li>
+                    <li><span class="title">Last Names: </span><span>{{citizen.apellidos}}</span></li>
+                    <li><span class="title">ID Number: </span><span>{{citizen.dni}}</span></li>
                 </ul>
             </div>
         </div>
     </div>
     <form (submit)="continue($event)">
         <button class="form-btn form-btn__green" type="submit">Confirm</button>
-        <p class="text-center">If it's not you, please press button "Back"</p>
+        <p class="txt">If it's not you, please press button "Back"</p>
         <div class="login-back">
             <button class="form-btn form-btn__sm form-btn__red" type="button" [routerLink]="['']">
                 <fa name="arrow-left"></fa>Back</button>

@@ -1,5 +1,5 @@
 <p class="main-title">Please select your candidate</p>
-<p>Click twice to select</p>
+<p class="txt">Click twice to select</p>
 
 <owl-carousel #owlElement [options]="{dots: false, navigation: false, margin: 10, responsive: { '0': {items: 1}, '800': {items: 2} }}" [items]="parties" [carouselClasses]="['owl-theme', 'row', 'sliding']">
     <div class="item" *ngFor="let party of parties2d; let column = index">
