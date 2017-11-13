@@ -2,9 +2,9 @@
 
 <div class="panel">
     <header class="panel-top">
-        <span>Fecha: 10 de abril de 2016</span>
-        <span>Hora: 15:35</span>
-        <span>Nº de mesa: 163453</span>
+        <span>Date: {{myDate | date:'shortDate'}}</span>
+        <span>Time:  {{myDate | date:'mediumTime'}}</span>
+        <span>Votation: {{votation[0].nombre | uppercase}}</span>
     </header>
     <main class="panel-main">
         <div class="main-logo">

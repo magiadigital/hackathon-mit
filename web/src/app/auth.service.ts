@@ -47,6 +47,10 @@ export class AuthService {
     const url = this._actionUrl + 'Ciudadano';
     return this.http.get(url).map((res: Response) => res.json());
   }
+  getVotation() {
+    const url = this._actionUrl + 'Eleccion';
+    return this.http.get(url).map((res: Response) => res.json());
+  }
   getLedgerCiudadano() {
     const url = this._actionUrl + 'LedgerCiudadano';
     return this.http.get(url).map((res: Response) => res.json());
