@@ -1,27 +1,29 @@
 import { Injectable } from '@angular/core';
+declare var jquery: any;
+declare var $: any;
 
 @Injectable()
 export class SharingService {
-  private selectedCandidate = {
-    title: null,
-    candidate: null,
-    candidate_alt: null,
-    party: null,
-    party_alt: null
-  };
+  private selectedCandidate: any;
 
   constructor() { }
 
   setSelectedCandidate (candidate) {
-    this.selectedCandidate.title = candidate.title;
-    this.selectedCandidate.candidate = candidate.candidate;
-    this.selectedCandidate.candidate_alt = candidate.candidate_alt;
-    this.selectedCandidate.party = candidate.party;
-    this.selectedCandidate.party_alt = candidate.party_alt;
+    this.selectedCandidate = candidate;
   }
 
   getSelectedCandidate() {
     return this.selectedCandidate;
   }
+
+  setLoader = function(val){
+    if (val === true) {
+      $('html').append('<div id="shadowBox" class="shadowBox"><div id="loader" class="sk-cube-grid centered"> <div class="sk-cube sk-cube1"></div> <div class="sk-cube sk-cube2"></div> <div class="sk-cube sk-cube3"></div> <div class="sk-cube sk-cube4"></div> <div class="sk-cube sk-cube5"></div> <div class="sk-cube sk-cube6"></div> <div class="sk-cube sk-cube7"></div> <div class="sk-cube sk-cube8"></div> <div class="sk-cube sk-cube9"></div> </div></div>').addClass('disabled');
+    }else {
+      $('html').removeClass('disabled');
+      $('#loader').remove();
+      $('#shadowBox').remove();
+    }
+  };
 
 }

@@ -16,6 +16,7 @@ import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { ResultComponent } from './result/result.component';
 import {SharingService} from './sharing.service';
+import {DataService} from './data.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {SharingService} from './sharing.service';
   providers: [
     AuthService,
     AuthGuard,
-    SharingService
+    SharingService,
+    DataService
   ],
   bootstrap: [AppComponent]
 })

@@ -17,9 +17,7 @@ export class AuthService {
   private _citizenExist = false;
   private _hasVoted: boolean;
 
-  constructor(
-    private http: Http
-  ) { }
+  constructor(private http: Http) { }
 
   setLocalCitizen (citizen) {
     this._citizen.dni = citizen.dni;
