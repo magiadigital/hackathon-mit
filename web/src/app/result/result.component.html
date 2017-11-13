@@ -3,19 +3,20 @@
 
   <div class="result-table__best">
     <div class="result-table__best__item " *ngFor="let item of best, let i = index">
-      <p class="subtitle">Place {{i + 1}}</p>
-      <p class="txt">DNI: {{item.candidato.split('#')[1]}}</p>
-      <p class="txt">VOTES: {{item.total}}</p>
+      <p class="subtitle">Place {{i + 1}} VOTES: {{item.ledger.total}}</p>
+      <img class="img-rounded" src="{{item.datos.imgUrl}}" alt="{{item.datos.nombres}}">
+      <img class="img-rounded" src="{{item.partido.imgUrl}}" alt="{{item.partido.nombre}}">
+      <p class="txt">DNI: {{item.datos.dni}}</p>
+      <p class="txt">NOMBRE: {{item.datos.nombres}}</p>
     </div>
   </div>
-
-  <div class="result-table__others">
+  <div class="result-table__others" *ngIf="others.length > 0">
     <div class="result-table__others__item" *ngFor="let item of others">
       <div class="title">
-        <img class="img-rounded" src="assets/images/logos/{{item.party}}" alt="{{item.party_alt}}">
-        <span>{{item.party_alt}}</span>
+        <img class="img-rounded" src="{{item.partido.imgUrl}}" alt="{{item.partido.nombre}}">
+        <span>{{item.partido.nombre}}</span>
       </div>
-      <p class="txt sm">{{item.candidate_alt}}</p>
+      <p class="txt sm">{{item.datos.nombres}}</p>
     </div>
   </div>
 
