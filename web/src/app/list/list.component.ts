@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { OwlCarousel } from 'ngx-owl-carousel';
 import {SharingService} from '../sharing.service';
 import {DataService} from '../data.service';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-list',
@@ -24,7 +25,19 @@ export class ListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getCandidates();
+    this.sharing.setLoader(true);
+    this.parties = this.sharing.getCandidates();
+    let index = 0;
+    for (let columnId = 0; columnId < this.parties.length / this.partiesInColumn; columnId++) {
+      const row = [];
+      for (let innerId = 0; innerId < this.partiesInColumn && index < this.parties.length; innerId++) {
+        const item = this.parties[index];
+        row.push(item);
+        index++;
+      }
+      this.parties2d.push(row);
+    }
+    this.sharing.setLoader(false);
   }
 
   selectParty(i) {

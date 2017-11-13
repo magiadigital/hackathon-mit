@@ -4,10 +4,10 @@
 <div class="party" *ngIf="id !== 'null'">
     <h4 class="title">{{selectedCandidate.partido.nombre}}</h4>
     <div class="field">
-        <img class="img-responsive img-rounded" src="assets/images/candidatos/{{selectedCandidate.datos.imgUrl}}" alt="{{selectedCandidate.datos.nombres}} {{selectedCandidate.datos.apellidos}}">
+        <img class="img-responsive img-rounded" src="{{selectedCandidate.datos.imgUrl}}" alt="{{selectedCandidate.datos.nombres}} {{selectedCandidate.datos.apellidos}}">
     </div>
     <div class="field">
-        <img class="img-responsive img-rounded" src="assets/images/logos/{{selectedCandidate.partido.imgUrl}}" alt="{{selectedCandidate.partido.nombre}}">
+        <img class="img-responsive img-rounded" src="{{selectedCandidate.partido.imgUrl}}" alt="{{selectedCandidate.partido.nombre}}">
     </div>
 </div>
 <button class="form-btn form-btn__green" type="button" (click)="vote()">Vote</button>

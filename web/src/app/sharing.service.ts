@@ -5,6 +5,7 @@ declare var $: any;
 @Injectable()
 export class SharingService {
   private selectedCandidate: any;
+  private candidates: any;
 
   constructor() { }
 
@@ -14,6 +15,14 @@ export class SharingService {
 
   getSelectedCandidate() {
     return this.selectedCandidate;
+  }
+
+  setCandidates (candidates) {
+    this.candidates = candidates;
+  }
+
+  getCandidates() {
+    return this.candidates;
   }
 
   setLoader = function(val){
