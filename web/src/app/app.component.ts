@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+
+  public myDate;
+  public votation = {
+    nombre: "",
+    periodo: "",
+    inicio: "",
+    fin: "",
+    estado: ""
+  }
+
+  constructor(
+    private authservice: AuthService
+  ) {
+    setInterval(() => {
+      this.myDate = new Date();
+    }, 3600);
+
+    this.authservice.getVotation().toPromise()
+      .then(data => {
+        this.votation = data;
+    })
+    .catch(error => {
+      console.log('Error: ', error);
+    })
+  }
 }
