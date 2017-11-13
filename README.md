@@ -11,23 +11,8 @@ According to OECD ( * ) corruption is widespread and part of the culture in most
 ## System Architecture
 ![System Architecture](https://github.com/magiadigital/hackathon-mit/raw/master/readimg/diagramaComponentes.png)
 
-## Instrucciones Internas
-Marranos,
+The enrollment process can be completed even with the electronic national ID, generating a password that is stored encrypted and symmetrically on the Blockchain and associated to the ID. The frontend reads the blockchain, unencrypts the password and that way it matches with the encrypted key and provides access to the vote screen.
 
-Ruta del REST API del hyperldger:
+Once the user logins the vote is processed and stored on Blockchain by the Smart Contract created according to the architecture described, on an immutable and incorruptible way.
 
-http://190.81.160.212:3000/explorer/
-
-Y como carga inicial se debe crear los candidatos, ciudadanos, elección, partido, tipo presidencia, regional, congresal
-
-
-
-
-login > ciudadanos > LedgerCiudadano
-
-lista candidatos > candidatos
-
-voto > votoT
-
----------------
-LedgerCiudadano = null si no ha votado
+There is an implemented function that is executed at the end of the voting process and delivers the results of the election process.
