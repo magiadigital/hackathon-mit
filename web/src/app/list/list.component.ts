@@ -66,7 +66,9 @@ export class ListComponent implements OnInit {
         for (let i = 0; i < candidates.length; i++) {
           const candidato = {
             datos: null,
-            partido: null
+            partido: null,
+            $class: candidates[i].$class,
+            dni: candidates[i].dni
           };
           this.data.getCiudadanoByCandidato(candidates[i]).toPromise().then(citizens => {
             if (citizens.length > 0) {
