@@ -1,6 +1,6 @@
-<p class="main-title">Please write your ID and your password {{pass}}</p>
-<form class="login-form" (submit)="loginuser($event)">
-    <input class="form-input" type="text" placeholder="ID">
-    <input class="form-input" type="password" placeholder="password">
-    <button class="form-btn form-btn__green" type="submit">Continue</button>
-</form>
+<p class="main-title">Please write your ID and your password</p>
+<div class="login-form">
+    <input class="form-input" type="text" [(ngModel)]="dni" placeholder="ID">
+    <input class="form-input" type="password" [(ngModel)]="pass" placeholder="password">
+    <button class="form-btn form-btn__green" type="submit" (click)="loginuser()">Continue</button>
+</div>

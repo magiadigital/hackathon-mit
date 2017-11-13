@@ -2,8 +2,6 @@ import { AuthService } from '../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as CryptoJS from 'crypto-js';
-import {WordArray} from 'crypto-js';
-import {log} from "util";
 
 @Component({
   selector: 'app-login',
@@ -29,13 +27,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
-  public loginuser(event) {
+  public loginuser() {
     let hasVoted = false;
-    if (event.target.elements[0].value !== null && event.target.elements[1].value !== null) {
-      this.authservice.getCitizenByDni(event.target.elements[0].value).toPromise().then(citizen => {
+    if (this.dni !== null && this.pass !== null) {
+      this.authservice.getCitizenByDni(this.dni).subscribe(citizen => {
         if (citizen !== null) {
-          console.log('citizen: ', citizen);
-          if (CryptoJS.AES.decrypt(citizen.clave, '' + event.target.elements[1].value).toString(CryptoJS.enc.Utf8) === this.pass) {
+          if (CryptoJS.AES.decrypt(citizen.clave, '' + this.pass).toString(CryptoJS.enc.Utf8) === this.pass) {
             this.authservice.setLocalCitizen({ dni: citizen.dni, nombres: citizen.nombres, apellidos: citizen.apellidos, imgUrl: citizen.imgUrl, $class: citizen.$class });
             this.authservice.setCitizenExits(true);
             this.authservice.getLedgerCiudadano().toPromise()
@@ -59,7 +56,7 @@ export class LoginComponent implements OnInit {
         } else {
           alert('Citizen not found');
         }
-      });
+      }, error => console.log(error));
     } else {
       alert('Please enter ID and Password');
     }

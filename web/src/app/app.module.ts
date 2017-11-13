@@ -17,6 +17,8 @@ import { AuthService } from './auth.service';
 import { ResultComponent } from './result/result.component';
 import {SharingService} from './sharing.service';
 import {DataService} from './data.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import {DataService} from './data.service';
     BrowserModule,
     RoutingModule,
     AngularFontAwesomeModule,
-    OwlModule
+    OwlModule,
+    FormsModule
   ],
   providers: [
     AuthService,
