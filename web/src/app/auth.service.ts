@@ -7,6 +7,7 @@ import { log } from 'util';
 export class AuthService {
 
   private _actionUrl = 'http://190.81.160.212:3000/api/';
+  private _votation = 'eleccion%20presidencial%202017';
 
   private _citizen = {
     dni: '',
@@ -14,6 +15,7 @@ export class AuthService {
     apellidos: '',
     imgUrl: '',
   }
+  private _setVotation = false;
   private _citizenExist = false;
   private _hasVoted: boolean;
 
@@ -38,15 +40,19 @@ export class AuthService {
     this._hasVoted = hasVoted;
   }
 
+  setVotation (votation: boolean) {
+    this._setVotation = votation;
+  }
+
   canLogIn(): boolean {
-    return (this._citizenExist && !this._hasVoted);
+    return (this._setVotation && this._citizenExist && !this._hasVoted);
   }
   getCitizen() {
     const url = this._actionUrl + 'Ciudadano';
     return this.http.get(url).map((res: Response) => res.json());
   }
   getVotation() {
-    const url = this._actionUrl + 'Eleccion';
+    const url = this._actionUrl + 'Eleccion' + '/' + this._votation;
     return this.http.get(url).map((res: Response) => res.json());
   }
   getLedgerCiudadano() {

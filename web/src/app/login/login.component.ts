@@ -27,26 +27,33 @@ export class LoginComponent implements OnInit {
 
   public loginuser(event) {
     let hasVoted = false;
-    this.citizenList.forEach(element => {
-      if (event.target.elements[0].value === element.dni ||  event.target.elements[0].value === element.clave) {
-        this.authservice.setLocalCitizen({ dni: element.dni, nombres: element.nombres, apellidos: element.apellidos, imgUrl: element.imgUrl });
-        this.authservice.setCitizenExits(true);
-        this.authservice.getLedgerCiudadano().toPromise()
-        .then((data) => {
-          data.array.forEach(item => {
-              if (item.ciudadano === element.dni) {
-                hasVoted = true;
-              }
-            });
-            if (!hasVoted) {
+    this.authservice.getVotation().toPromise()
+      .then(votation => {
+        if(votation.estado === 'activa') {
+          this.authservice.setVotation(true);
+          this.citizenList.forEach(element => {
+            if (event.target.elements[0].value === element.dni ||  event.target.elements[0].value === element.clave) {
+              this.authservice.setLocalCitizen({ dni: element.dni, nombres: element.nombres, apellidos: element.apellidos, imgUrl: element.imgUrl });
+              this.authservice.setCitizenExits(true);
+              this.authservice.getLedgerCiudadano().toPromise()
+              .then((data) => {
+                data.array.forEach(item => {
+                  if (item.ciudadano === element.dni) {
+                    hasVoted = true;
+                  }
+                });
+                if (!hasVoted) {
+                  this.authservice.setHasvoted(hasVoted);
+                  this.router.navigate(['/home']);
+                }
+              })
+              .catch(error => console.log('Error: ', error));
               this.authservice.setHasvoted(hasVoted);
-              this.router.navigate(['/home']);
+              this.router.navigate(['/finish']);
             }
-          })
-          .catch(error => console.log('Error: ', error));
-          this.authservice.setHasvoted(hasVoted);
-          this.router.navigate(['/home']);
+          });
         }
-    });
+      })
+    .catch(error => console.log('Error: ', error) );
   }
 }
