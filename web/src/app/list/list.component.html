@@ -4,7 +4,7 @@
 <owl-carousel #owlElement [options]="{dots: false, navigation: false, margin: 10, responsive: { '0': {items: 1}, '800': {items: 2} }}" [items]="parties" [carouselClasses]="['owl-theme', 'row', 'sliding']">
     <div class="item" *ngFor="let party of parties2d; let column = index">
         <div class="party" (click)="selectParty(column*partiesInColumn + row)" *ngFor="let item of party; let row = index" [ngClass]="chooseParty(column*partiesInColumn + row)">
-            <h4 class="title">{{item.title}}</h4>
+            <h4 class="title">{{item.partido.nombre}}</h4>
             <div class="field">
                 <img class="img-responsive img-rounded" src="assets/images/candidatos/{{item.candidate}}" alt="{{item.candidate_alt}}">
             </div>
