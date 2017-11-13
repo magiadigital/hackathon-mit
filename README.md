@@ -32,3 +32,7 @@ With voting:
 * 12345672 - clave2
 * 12345674 - clave4
 * 12345677 - clave7
+
+To see the election results go to http://190.81.160.143:4201/result.
+
+Note: Ideally the election results would only be available at the end of the election, but for demo purposes they are available at all times to see election progress.
