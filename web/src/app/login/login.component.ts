@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     if (this.dni !== null && this.pass !== null) {
       this.authservice.getCitizenByDni(this.dni).subscribe(citizen => {
         if (citizen !== null) {
-          if (true) {
+          if (CryptoJS.AES.decrypt(citizen.clave, '' + this.pass).toString(CryptoJS.enc.Utf8) === this.pass) {
             this.authservice.setLocalCitizen({ dni: citizen.dni, nombres: citizen.nombres, apellidos: citizen.apellidos, imgUrl: citizen.imgUrl, $class: citizen.$class });
             this.authservice.setCitizenExits(true);
             this.authservice.getLedgerCiudadano().toPromise()
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
             this.authservice.setHasvoted(hasVoted);
             this.router.navigate(['/finish']);
           } else {
-            // alert('Incorrect password');
+            alert('Incorrect password');
           }
         } else {
           alert('Citizen not found');
@@ -62,4 +62,4 @@ export class LoginComponent implements OnInit {
     }
   }
 }
-//CryptoJS.AES.decrypt(citizen.clave, '' + this.pass).toString(CryptoJS.enc.Utf8) === this.pass
+//
