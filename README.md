@@ -18,7 +18,7 @@ Once the user logins the vote is processed and stored on Blockchain by the Smart
 There is an implemented function that is executed at the end of the voting process and delivers the results of the election process.
 
 ### Working Deployment
-Frontend -> http://190.81.160.143:4201/
+Frontend -> http://190.81.160.152:4201/
 
 Example enrrolled users without voting (userID - password):
 * 12345672 - clave2
@@ -33,6 +33,6 @@ With voting:
 * 12345674 - clave4
 * 12345677 - clave7
 
-To see the election results go to http://190.81.160.143:4201/result.
+To see the election results go to http://190.81.160.152:4201/result.
 
 Note: Ideally the election results would only be available at the end of the election, but for demo purposes they are available at all times to see election progress.
