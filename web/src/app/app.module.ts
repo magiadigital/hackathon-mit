@@ -14,6 +14,7 @@ import { VoteComponent } from './vote/vote.component';
 import { FinishComponent } from './finish/finish.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
+import { ResultComponent } from './result/result.component';
 import {SharingService} from './sharing.service';
 import {DataService} from './data.service';
 
@@ -24,7 +25,8 @@ import {DataService} from './data.service';
     LoginComponent,
     ListComponent,
     VoteComponent,
-    FinishComponent
+    FinishComponent,
+    ResultComponent
   ],
   imports: [
     HttpModule,
