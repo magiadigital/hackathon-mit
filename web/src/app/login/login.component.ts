@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     let hasVoted = false;
     this.citizenList.forEach(element => {
       if (event.target.elements[0].value === element.dni ||  event.target.elements[0].value === element.clave) {
-        this.authservice.setLocalCitizen({ dni: element.dni, nombres: element.nombres, apellidos: element.apellidos, imgUrl: element.imgUrl });
+        this.authservice.setLocalCitizen({ dni: element.dni, nombres: element.nombres, apellidos: element.apellidos, imgUrl: element.imgUrl, $class: element.$class });
         this.authservice.setCitizenExits(true);
         this.authservice.getLedgerCiudadano().toPromise()
         .then((data) => {

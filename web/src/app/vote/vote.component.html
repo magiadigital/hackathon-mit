@@ -2,7 +2,7 @@
 <p class="txt">{{info}}</p>
 
 <div class="party" *ngIf="id !== 'null'">
-    <h4 class="title">{{selectedCandidate.title}}</h4>
+    <h4 class="title">{{selectedCandidate.partido.nombre}}</h4>
     <div class="field">
         <img class="img-responsive img-rounded" src="assets/images/candidatos/{{selectedCandidate.datos.imgUrl}}" alt="{{selectedCandidate.datos.nombres}} {{selectedCandidate.datos.apellidos}}">
     </div>

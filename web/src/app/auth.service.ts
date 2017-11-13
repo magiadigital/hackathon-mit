@@ -13,6 +13,7 @@ export class AuthService {
     nombres: '',
     apellidos: '',
     imgUrl: '',
+    $class: null
   }
   private _citizenExist = false;
   private _hasVoted: boolean;
@@ -24,6 +25,7 @@ export class AuthService {
     this._citizen.nombres = citizen.nombres;
     this._citizen.apellidos = citizen.apellidos;
     this._citizen.imgUrl = citizen.imgUrl;
+    this._citizen.$class = citizen.$class;
   }
 
   getLocalCitizen() {
