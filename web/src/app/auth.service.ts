@@ -14,6 +14,7 @@ export class AuthService {
     nombres: '',
     apellidos: '',
     imgUrl: '',
+    $class: null
   }
   private _setVotation = false;
   private _citizenExist = false;
@@ -26,6 +27,7 @@ export class AuthService {
     this._citizen.nombres = citizen.nombres;
     this._citizen.apellidos = citizen.apellidos;
     this._citizen.imgUrl = citizen.imgUrl;
+    this._citizen.$class = citizen.$class;
   }
 
   getLocalCitizen() {
@@ -49,6 +51,10 @@ export class AuthService {
   }
   getCitizen() {
     const url = this._actionUrl + 'Ciudadano';
+    return this.http.get(url).map((res: Response) => res.json());
+  }
+  getCitizenByDni(dni) {
+    const url = this._actionUrl + 'Ciudadano/' + dni;
     return this.http.get(url).map((res: Response) => res.json());
   }
   getVotation() {

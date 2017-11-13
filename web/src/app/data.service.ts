@@ -19,4 +19,14 @@ export class DataService {
     const url = this._actionUrl + 'queries/selectPartidoByCandidato?nombre=' + candidato.partido.split('#')[1];
     return this.http.get(url).map((res: Response) => res.json());
   }
+
+  getActiveElection() {
+    const url = this._actionUrl + 'queries/selectActiveElection';
+    return this.http.get(url).map((res: Response) => res.json());
+  }
+
+  vote(voto) {
+    const url = this._actionUrl + 'VotoT';
+    return this.http.post(url, voto).map((res: Response) => res.json());
+  }
 }
