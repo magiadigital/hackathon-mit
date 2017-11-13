@@ -4,28 +4,31 @@
   <div class="result-table__best">
     <div class="result-table__best__item">
       <p class="subtitle">1st. Place</p>
-      <img class="img-rounded" src="assets/images/candidatos/fn.jpg" alt="item.candidate_alt">
-      <p class="txt">Carlos Perez</p>
+      <img class="img-rounded" src="assets/images/candidatos/{{best[0].candidate}}" alt="{{best[0].candidate_alt}}">
+      <img class="img-rounded" src="assets/images/logos/{{best[0].party}}" alt="{{best[0].party_alt}}">
+      <p class="txt">{{best[0].candidate_alt}}</p>
     </div>
     <div class="result-table__best__item">
       <p class="subtitle">2nd. Place</p>
-      <img class="img-rounded" src="assets/images/candidatos/fn.jpg" alt="item.candidate_alt">
-      <p class="txt">Carlos Perez</p>
+      <img class="img-rounded" src="assets/images/candidatos/{{best[0].candidate}}" alt="{{best[0].candidate_alt}}">
+      <img class="img-rounded" src="assets/images/logos/{{best[0].party}}" alt="{{best[0].party_alt}}">
+      <p class="txt">{{best[0].candidate_alt}}</p>
     </div>
     <div class="result-table__best__item">
       <p class="subtitle">3rd. Place</p>
-      <img class="img-rounded" src="assets/images/candidatos/fn.jpg" alt="item.candidate_alt">
-      <p class="txt">Carlos Perez</p>
+      <img class="img-rounded" src="assets/images/candidatos/{{best[0].candidate}}" alt="{{best[0].candidate_alt}}">
+      <img class="img-rounded" src="assets/images/logos/{{best[0].party}}" alt="{{best[0].party_alt}}">
+      <p class="txt">{{best[0].candidate_alt}}</p>
     </div>
   </div>
 
   <div class="result-table__others">
-    <div class="result-table__others__item">
+    <div class="result-table__others__item" *ngFor="let item of others">
       <div class="title">
-        <img class="img-rounded" src="assets/images/candidatos/fs.jpg" alt="item.candidate_alt">
-        <span>Party 1</span>
+        <img class="img-rounded" src="assets/images/logos/{{item.party}}" alt="{{item.party_alt}}">
+        <span>{{item.party_alt}}</span>
       </div>
-      <p class="txt sm">Carlos Perez</p>
+      <p class="txt sm">{{item.candidate_alt}}</p>
     </div>
     <div class="result-table__others__item">
       <div class="title">
