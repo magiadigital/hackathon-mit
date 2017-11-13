@@ -1,3 +1,5 @@
+
+
 # Problem:
 In lower income countries, corruption is present and takes a toll, preventing these countries to economically develop. It is present at all levels and it impacts more if the elected officials are corrupt. To have better conditions to develop, it is key for those countries to have a fair and transparent election process, as well as provide secure, more accessible, cost-effective ways to have more citizens to exercise the right to vote.
 
@@ -6,25 +8,18 @@ According to OECD ( * ) corruption is widespread and part of the culture in most
 
 ( * ) [http://oecdobserver.org/news/archivestory.php/aid/291/Fighting_corruption_in_the_developing_countries.html]
 
+## System Architecture
+![System Architecture](https://github.com/magiadigital/hackathon-mit/raw/master/readimg/diagramaComponentes.png)
 
+The enrollment process can be completed even with the electronic national ID, generating a password that is stored encrypted and symmetrically on the Blockchain and associated to the ID. The frontend reads the blockchain, unencrypts the password and that way it matches with the encrypted key and provides access to the vote screen.
 
-## Instrucciones Internas
-Marranos,
+Once the user logins the vote is processed and stored on Blockchain by the Smart Contract created according to the architecture described, on an immutable and incorruptible way.
 
-Ruta del REST API del hyperldger:
+There is an implemented function that is executed at the end of the voting process and delivers the results of the election process.
 
-http://190.81.160.212:3000/explorer/
+### Working Deployment
+Frontend -> http://190.81.160.143:4201/
 
-Y como carga inicial se debe crear los candidatos, ciudadanos, elección, partido, tipo presidencia, regional, congresal
-
-
-
-
-login > ciudadanos > LedgerCiudadano
-
-lista candidatos > candidatos
-
-voto > votoT
-
----------------
-LedgerCiudadano = null si no ha votado
+Example enrrolled users: 
+* ID - clave
+* ID - clave

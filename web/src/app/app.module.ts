@@ -18,7 +18,7 @@ import { ResultComponent } from './result/result.component';
 import {SharingService} from './sharing.service';
 import {DataService} from './data.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { FastloginComponent } from './fastlogin/fastlogin.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListComponent,
     VoteComponent,
     FinishComponent,
-    ResultComponent
+    ResultComponent,
+    FastloginComponent
   ],
   imports: [
     HttpModule,

@@ -26,6 +26,7 @@ export class AppComponent {
 
     this.authservice.getVotation().toPromise()
       .then(data => {
+        console.log(data);
         this.votation = data;
     })
     .catch(error => {

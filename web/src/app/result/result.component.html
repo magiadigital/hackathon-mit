@@ -2,23 +2,10 @@
 <div class="result-table">
 
   <div class="result-table__best">
-    <div class="result-table__best__item">
-      <p class="subtitle">1st. Place</p>
-      <img class="img-rounded" src="assets/images/candidatos/{{best[0].candidate}}" alt="{{best[0].candidate_alt}}">
-      <img class="img-rounded" src="assets/images/logos/{{best[0].party}}" alt="{{best[0].party_alt}}">
-      <p class="txt">{{best[0].candidate_alt}}</p>
-    </div>
-    <div class="result-table__best__item">
-      <p class="subtitle">2nd. Place</p>
-      <img class="img-rounded" src="assets/images/candidatos/{{best[0].candidate}}" alt="{{best[0].candidate_alt}}">
-      <img class="img-rounded" src="assets/images/logos/{{best[0].party}}" alt="{{best[0].party_alt}}">
-      <p class="txt">{{best[0].candidate_alt}}</p>
-    </div>
-    <div class="result-table__best__item">
-      <p class="subtitle">3rd. Place</p>
-      <img class="img-rounded" src="assets/images/candidatos/{{best[0].candidate}}" alt="{{best[0].candidate_alt}}">
-      <img class="img-rounded" src="assets/images/logos/{{best[0].party}}" alt="{{best[0].party_alt}}">
-      <p class="txt">{{best[0].candidate_alt}}</p>
+    <div class="result-table__best__item " *ngFor="let item of best, let i = index">
+      <p class="subtitle">Place {{i + 1}}</p>
+      <p class="txt">DNI: {{item.candidato.split('#')[1]}}</p>
+      <p class="txt">VOTES: {{item.total}}</p>
     </div>
   </div>
 

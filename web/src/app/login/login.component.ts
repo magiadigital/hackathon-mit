@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
               })
               .catch(error => console.log('Error: ', error));
             this.authservice.setHasvoted(hasVoted);
-            this.router.navigate(['/home']);
+            this.router.navigate(['/finish']);
           } else {
             // alert('Incorrect password');
           }

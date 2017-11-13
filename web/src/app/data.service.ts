@@ -29,4 +29,9 @@ export class DataService {
     const url = this._actionUrl + 'VotoT';
     return this.http.post(url, voto).map((res: Response) => res.json());
   }
+
+  getCandidatesLedgers() {
+    const url = this._actionUrl + 'LedgerCandidato';
+    return this.http.get(url).map((res: Response) => res.json());
+  }
 }
