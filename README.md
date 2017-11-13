@@ -19,6 +19,7 @@ There is an implemented function that is executed at the end of the voting proce
 
 ### Working Deployment
 Frontend -> http://190.81.160.143:4201/
+
 Example enrrolled users: 
 * ID - clave
 * ID - clave
