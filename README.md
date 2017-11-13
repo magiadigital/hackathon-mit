@@ -20,6 +20,15 @@ There is an implemented function that is executed at the end of the voting proce
 ### Working Deployment
 Frontend -> http://190.81.160.143:4201/
 
-Example enrrolled users: 
-* ID - clave
-* ID - clave
+Example enrrolled users without voting (userID - password):
+* 12345672 - clave2
+* 12345673 - clave3
+* 12345675 - clave5
+* 12345676 - clave6
+* 12345678 - clave8
+
+With voting:
+* 12345671 - clave1
+* 12345672 - clave2
+* 12345674 - clave4
+* 12345677 - clave7
