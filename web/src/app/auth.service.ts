@@ -7,7 +7,7 @@ import { log } from 'util';
 export class AuthService {
 
   private _actionUrl = 'http://190.81.160.212:3000/api/';
-  private _votation = 'eleccion%20presidencial%202017';
+  private _votation = 'Eleccion_1_2017';
 
   private _citizen = {
     dni: '',

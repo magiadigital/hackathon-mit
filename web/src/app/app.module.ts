@@ -17,6 +17,7 @@ import { AuthService } from './auth.service';
 import { ResultComponent } from './result/result.component';
 import {SharingService} from './sharing.service';
 import {DataService} from './data.service';
+import { FastloginComponent } from './fastlogin/fastlogin.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {DataService} from './data.service';
     ListComponent,
     VoteComponent,
     FinishComponent,
-    ResultComponent
+    ResultComponent,
+    FastloginComponent
   ],
   imports: [
     HttpModule,
