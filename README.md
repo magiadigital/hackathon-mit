@@ -1,3 +1,5 @@
+
+
 # Problem:
 In lower income countries, corruption is present and takes a toll, preventing these countries to economically develop. It is present at all levels and it impacts more if the elected officials are corrupt. To have better conditions to develop, it is key for those countries to have a fair and transparent election process, as well as provide secure, more accessible, cost-effective ways to have more citizens to exercise the right to vote.
 
@@ -6,7 +8,8 @@ According to OECD ( * ) corruption is widespread and part of the culture in most
 
 ( * ) [http://oecdobserver.org/news/archivestory.php/aid/291/Fighting_corruption_in_the_developing_countries.html]
 
-
+## System Architecture
+![System Architecture](https://www.dropbox.com/s/n2gxpxownck0djt/diagramaComponentes.png?dl=0)
 
 ## Instrucciones Internas
 Marranos,
