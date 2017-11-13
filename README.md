@@ -9,7 +9,7 @@ According to OECD ( * ) corruption is widespread and part of the culture in most
 ( * ) [http://oecdobserver.org/news/archivestory.php/aid/291/Fighting_corruption_in_the_developing_countries.html]
 
 ## System Architecture
-![System Architecture](https://www.dropbox.com/s/n2gxpxownck0djt/diagramaComponentes.png?dl=0)
+![System Architecture](https://github.com/magiadigital/hackathon-mit/raw/master/readimg/diagramaComponentes.png)
 
 ## Instrucciones Internas
 Marranos,
