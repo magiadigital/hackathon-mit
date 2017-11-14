@@ -1,0 +1,52 @@
+namespace org.acme.mynetwork
+
+participant Ciudadano identified by dni {
+  o String dni
+  o String nombres
+  o String apellidos
+  o String imgUrl
+  o String clave
+}
+participant Candidato identified by dni {
+  o String dni
+  --> Ciudadano ciudadano
+  --> Partido partido
+}
+asset Partido identified by nombre {
+  o String nombre
+  o String imgUrl
+}
+asset Eleccion identified by nombre {
+  o String nombre
+  o String periodo
+  o String inicio
+  o String fin
+  o String estado
+}
+asset Voto identified by idVoto{
+  o String idVoto
+  --> Eleccion eleccion
+  --> Candidato candidato
+}
+asset Tipo identified by nombre {
+  o String nombre
+}
+asset LedgerCiudadano identified by idLCI {
+  o String idLCI
+  --> Eleccion eleccion
+  --> Ciudadano ciudadano
+}
+asset LedgerCandidato identified by idLCA {
+  o String idLCA
+  -->Eleccion eleccion
+  -->Candidato candidato
+  --> Tipo tipo
+  o Integer total
+}
+transaction VotoT {
+  o String idVoto
+  o String idLCI
+  -->Eleccion eleccion
+  -->Candidato candidato
+  -->Ciudadano ciudadano
+}

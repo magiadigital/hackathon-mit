@@ -12,7 +12,7 @@ import { ResultComponent } from '../result/result.component';
 import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: ResultComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'candidatesList', component: ListComponent, canActivate: [AuthGuard] },
   { path: 'votes', component: VoteComponent, canActivate: [AuthGuard] },

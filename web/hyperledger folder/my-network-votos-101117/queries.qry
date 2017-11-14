@@ -1,0 +1,49 @@
+query selectLedgerCandidatoPorEleccionYCandidato {
+  description: "Select all ..."
+  statement:
+      SELECT org.acme.mynetwork.LedgerCandidato
+}
+query selectCiudadano{
+  description: "Select all ..."
+  statement:
+      SELECT org.acme.mynetwork.Ciudadano
+}
+query selectEleccion {
+  description: "Select all ..."
+  statement:
+      SELECT org.acme.mynetwork.Eleccion
+}
+query selectLedgerCiudadano {
+  description: "Select all ..."
+  statement:
+      SELECT org.acme.mynetwork.LedgerCiudadano
+}
+query selectCandidatos {
+  description: "Select all ..."
+  statement:
+      SELECT org.acme.mynetwork.Candidato
+}
+
+query selectCiudadanoByCandidato {
+  description: "Select by Candidato"
+  statement:
+      SELECT org.acme.mynetwork.Ciudadano WHERE (dni == _$dni)
+}
+
+query selectPartidoByCandidato {
+  description: "Select by Candidato"
+  statement:
+      SELECT org.acme.mynetwork.Partido WHERE (nombre == _$nombre)
+}
+
+query selectActiveElection {
+  description: "Select by status"
+  statement:
+      SELECT org.acme.mynetwork.Eleccion WHERE (estado == 'Activa')
+}
+
+query getWinner {
+  description: "Select by election winner"
+  statement:
+      SELECT org.acme.mynetwork.LedgerCandidato WHERE (eleccion == _$eleccion) ORDER BY total ASC
+}
