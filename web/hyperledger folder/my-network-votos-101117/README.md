@@ -1,1 +1,1 @@
-# My Commodity Trading network
+# My Voting System network
